@@ -9,6 +9,10 @@
 
 > Node.js library that generates Typescript clients based on the OpenAPI specification.
 
+## Differences from the [original library](https://github.com/ferdikoomen/openapi-typescript-codegen)
+- Service name excluded from operationId (format `ServiceName_OperationName`)
+  - operation with tag `Simple` and operationId `Simple_GetList` with generate `getList()` method in service `SimpleService`
+
 ## Why?
 - Frontend ❤️ OpenAPI, but we do not want to use JAVA codegen in our builds
 - Quick, lightweight, robust and framework-agnostic 🚀
@@ -94,13 +98,13 @@ Support
 - [Angular support](docs/angular-support.md)
 - [Node-Fetch support](docs/node-fetch-support.md)
 
-[npm-url]: https://npmjs.org/package/openapi-typescript-codegen
-[npm-image]: https://img.shields.io/npm/v/openapi-typescript-codegen.svg
+[npm-url]: https://npmjs.org/package/@neisvestney/openapi-typescript-codegen
+[npm-image]: https://img.shields.io/npm/v/@neisvestney/openapi-typescript-codegen.svg
 [license-url]: LICENSE
-[license-image]: http://img.shields.io/npm/l/openapi-typescript-codegen.svg
-[coverage-url]: https://codecov.io/gh/ferdikoomen/openapi-typescript-codegen
-[coverage-image]: https://img.shields.io/codecov/c/github/ferdikoomen/openapi-typescript-codegen.svg
-[downloads-url]: http://npm-stat.com/charts.html?package=openapi-typescript-codegen
-[downloads-image]: http://img.shields.io/npm/dm/openapi-typescript-codegen.svg
-[build-url]: https://circleci.com/gh/ferdikoomen/openapi-typescript-codegen/tree/master
-[build-image]: https://circleci.com/gh/ferdikoomen/openapi-typescript-codegen/tree/master.svg?style=svg
+[license-image]: http://img.shields.io/npm/l/@neisvestney/openapi-typescript-codegen.svg
+[coverage-url]: https://codecov.io/gh/neisvestney/openapi-typescript-codegen
+[coverage-image]: https://img.shields.io/codecov/c/github/neisvestney/openapi-typescript-codegen.svg
+[downloads-url]: http://npm-stat.com/charts.html?package=@neisvestney/openapi-typescript-codegen
+[downloads-image]: http://img.shields.io/npm/dm/@neisvestney/openapi-typescript-codegen.svg
+[build-url]: https://circleci.com/gh/neisvestney/openapi-typescript-codegen/tree/master
+[build-image]: https://circleci.com/gh/neisvestney/openapi-typescript-codegen/tree/master.svg?style=svg

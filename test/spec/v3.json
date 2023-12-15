@@ -21,7 +21,7 @@
                 "tags": [
                     "Simple"
                 ],
-                "operationId": "GetCallWithoutParametersAndResponse"
+                "operationId": "Simple_GetCallWithoutParametersAndResponse"
             },
             "put": {
                 "tags": [
