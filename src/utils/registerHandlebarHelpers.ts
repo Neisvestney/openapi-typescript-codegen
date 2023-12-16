@@ -94,7 +94,7 @@ export const registerHandlebarHelpers = (root: {
         return value
             .replace(/\*\//g, '*')
             .replace(/\/\*/g, '*')
-            .replace(/\r?\n(.*)/g, (_, w) => `${EOL} * ${w.trim()}`);
+            .replace(/\r?\n(.*)/g, (_, w) => `\n * ${w.trim()}`);
     });
 
     Handlebars.registerHelper('escapeDescription', function (value: string): string {
