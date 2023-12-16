@@ -8,6 +8,8 @@ import { dirname, extname, resolve } from 'path';
 
 const { precompile } = handlebars;
 
+const isDev = process.env.NODE_ENV === 'development'
+
 /**
  * Custom plugin to parse handlebar imports and precompile
  * the template on the fly. This reduces runtime by about
@@ -56,9 +58,10 @@ const getPlugins = () => {
         handlebarsPlugin(),
         typescript({
             module: 'esnext',
+            sourceMap: isDev,
         }),
     ];
-    if (process.env.NODE_ENV === 'development') {
+    if (isDev) {
         return plugins;
     }
     return [...plugins, terser()];
@@ -70,6 +73,7 @@ export default {
         exports: 'named',
         file: './dist/index.js',
         format: 'cjs',
+        sourcemap: isDev,
     },
     external: ['camelcase', 'commander', 'fs-extra', 'handlebars', '@apidevtools/json-schema-ref-parser'],
     plugins: getPlugins(),
